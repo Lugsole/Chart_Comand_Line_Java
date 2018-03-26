@@ -1,4 +1,4 @@
-package chart_comand_line;
+package chart_command_line;
 
 import Chart_Components.*;
 
