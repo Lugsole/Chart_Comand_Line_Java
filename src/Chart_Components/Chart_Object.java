@@ -5,10 +5,18 @@ public class Chart_Object {
     char[][] buffer;
     int height;
     int width;
-    int connector;
+    int connector = 2;
     public void Make_buffer() {
     }
     public void Add_connector(){
+    }
+
+    public void set_Width(){
+    }
+
+    public void set_Height(){
+    }
+    public void Compute_connector(){
     }
 
     @Override
