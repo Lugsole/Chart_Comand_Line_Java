@@ -113,7 +113,8 @@ public class Chart extends Chart_Object {
 					buffer[object_x + x][object_y + y] = b.buffer[object_x][object_y];
 			}
 		}
-		buffer[x + b.connector][b.height-1] = '╤';
+		if(list.size() > 0)
+			buffer[x + b.connector][b.height-1] = '╤';
 	}
 
 	@Override
