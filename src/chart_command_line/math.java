@@ -59,7 +59,7 @@ public class math {
 			System.out.println(s.pop());
 		}
 		while(!c.empty()){
-			System.out.println(c.pop());
+			System.out.print(c.pop());
 		}
 	}
 

@@ -62,7 +62,9 @@ public class Chart extends Chart_Object {
 				this.height = get.height;
 			}
 		}
-		this.height += b.height + 1;
+		this.height += b.height;
+		if (this.list.size() > 0)
+			this.height += 1;
 	}
 
 	@Override
