@@ -72,7 +72,7 @@ public class Chart extends Chart_Object {
 		/* compute the connector */
 		this.Compute_connector();
 		/* draw the connector */
-		buffer[this.connector][0] = '╧';
+		buffer[this.connector][0] = '\u2567';
 	}
 
 	private void Make_Buffers(){
@@ -116,7 +116,7 @@ public class Chart extends Chart_Object {
 			}
 		}
 		if(list.size() > 0)
-			buffer[x + b.connector][b.height-1] = '╤';
+			buffer[x + b.connector][b.height-1] = '\u2564';
 	}
 
 	@Override
@@ -160,12 +160,12 @@ public class Chart extends Chart_Object {
 		boolean bottem = false;
 		for (int i = 0; i <this.width; ++i) {
 			/* put a bar across the screen */
-			if(buffer[i][b.height-1] == '╤'){
+			if(buffer[i][b.height-1] == '\u2564'){
 				top = true;
 			}else{
 				top = false;
 				}
-			if(buffer[i][b.height+1] == '╧'){
+			if(buffer[i][b.height+1] == '\u2567'){
 				bottem = true;
 			}else{
 				bottem = false;
@@ -176,12 +176,12 @@ public class Chart extends Chart_Object {
 		}
 		for (int i = this.width-1; i >0; --i) {
 			/* put a bar across the screen */
-			if(buffer[i][b.height-1] == '╤'){
+			if(buffer[i][b.height-1] == '\u2564'){
 				top = true;
 			}else{
 				top = false;
 			}
-			if(buffer[i][b.height+1] == '╧'){
+			if(buffer[i][b.height+1] == '\u2567'){
 				bottem = true;
 			}else{
 				bottem = false;
@@ -189,13 +189,13 @@ public class Chart extends Chart_Object {
 			if(!top && !bottem)
 				buffer[i][b.height] = ' ';
 			if(!top && bottem)
-				buffer[i][b.height] = '┐';
+				buffer[i][b.height] = '\u2510';
 			if(top && !bottem)
-				buffer[i][b.height] = '┘';
-			if(top && bottem && buffer[i][b.height] == '├')
-				buffer[i][b.height] = '│';
-			if(top && bottem && buffer[i][b.height] == '┼')
-				buffer[i][b.height] = '┤';
+				buffer[i][b.height] = '\u2518';
+			if(top && bottem && buffer[i][b.height] == '\u251C')
+				buffer[i][b.height] = '\u2502';
+			if(top && bottem && buffer[i][b.height] == '\u253C')
+				buffer[i][b.height] = '\u2524';
 
 			if(top || bottem)
 				break;
@@ -206,23 +206,23 @@ public class Chart extends Chart_Object {
 		if(started)
 			if(top)
 				if(bottem)
-					return '┼';
+					return '\u253C';
 				else
-					return '┴';
+					return '\u2534';
 			else
 				if(bottem)
-					return '┬';
+					return '\u252C';
 				else
-					return '─';
+					return '\u2500';
 		else
 			if(top)
 				if(bottem)
-					return '├';
+					return '\u251C';
 				else
-					return '└';
+					return '\u2514';
 			else
 				if(bottem)
-					return '┌';
+					return '\u250C';
 				else
 					return ' ';
 	}

@@ -52,7 +52,7 @@ public class Box extends Chart_Object {
 	@Override
 	public void Add_connector(){
 		this.Compute_connector();
-		buffer[this.connector][0] = '╧';
+		buffer[this.connector][0] = '\u2567';
 	}
 
 	@Override
@@ -71,8 +71,8 @@ public class Box extends Chart_Object {
 		}
 		/* for the width of the screen minus the left most and right most chars */
 		for (int i = 1; i < width - 1; i++) {
-			buffer[i][0] = '═';
-			buffer[i][height-1] = '═';
+			buffer[i][0] = '\u2550';
+			buffer[i][height-1] = '\u2550';
 		}
 		/* get all the char's of the text */
 		char[] word = name.toCharArray();
@@ -98,17 +98,17 @@ public class Box extends Chart_Object {
 		/* for the height of the buffer */
 		for (int i = 1; i < height - 1; i++) {
 			/* set the left side of the box to a box char */
-			buffer[0][i] = '║';
+			buffer[0][i] = '\u2551';
 			/* set the right side of the box to a box char */
-			buffer[width - 1][i] = '║';
+			buffer[width - 1][i] = '\u2551';
 		}
 		/* put the top left of buffer to be a corner */
-		buffer[0][0] = '╔';
+		buffer[0][0] = '\u2554';
 		/* put the bottom left of buffer to be a corner */
-		buffer[0][height - 1] = '╚';
+		buffer[0][height - 1] = '\u255A';
 		/* put the top right of buffer to be a corner */
-		buffer[width - 1][0] = '╗';
+		buffer[width - 1][0] = '\u2557';
 		/* put the bottom right of buffer to be a corner */
-		buffer[width - 1][height - 1] = '╝';
+		buffer[width - 1][height - 1] = '\u255D';
 	}
 }
