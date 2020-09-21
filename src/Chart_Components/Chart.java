@@ -52,6 +52,7 @@ public class Chart extends Chart_Object {
 	public void set_Height(){
 		this.b = new Box(this.name);
 		this.b.set_Height();
+		this.height = 0;
 		for (int i = 0; i < list.size(); i++) {
 			Chart_Object get = list.get(i);
 			/* Make this chart width wider by the amount of the sub chart */
